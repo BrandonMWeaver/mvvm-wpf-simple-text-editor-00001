@@ -23,9 +23,12 @@
                   FontFamily="Consolas"
                   FontSize="15">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_New" />
-                    <MenuItem Header="_Open" />
-                    <MenuItem Header="_Save" />
+                    <MenuItem Header="_New"
+                              Command="{Binding NewCommand}" />
+                    <MenuItem Header="_Open"
+                              Command="{Binding OpenCommand}" />
+                    <MenuItem Header="_Save"
+                              Command="{Binding SaveCommand}" />
                     <MenuItem Header="_Exit"
                               Command="{Binding ExitCommand}" />
                 </MenuItem>
@@ -37,7 +40,7 @@
                  Padding="1"
                  FontFamily="Consolas"
                  FontSize="15"
-                 Text="{Binding TextFile.Text, Mode=TwoWay}" />
+                 Text="{Binding TextFile.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
     
 </Window>
