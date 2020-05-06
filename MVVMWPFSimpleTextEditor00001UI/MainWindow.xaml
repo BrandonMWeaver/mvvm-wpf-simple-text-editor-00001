@@ -5,10 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMWPFSimpleTextEditor00001UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#CDCDCD">
     
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top"
+                  FontFamily="Consolas"
+                  FontSize="15">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open" />
+                    <MenuItem Header="_Save" />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        
+        <TextBox Grid.Row="1"
+                 Margin="1"
+                 Padding="1"
+                 FontFamily="Consolas"
+                 FontSize="15" />
     </Grid>
     
 </Window>
