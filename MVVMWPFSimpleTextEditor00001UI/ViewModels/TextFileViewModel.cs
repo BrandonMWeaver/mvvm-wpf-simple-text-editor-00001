@@ -1,4 +1,5 @@
 ﻿using MVVMWPFSimpleTextEditor00001UI.Models;
+using MVVMWPFSimpleTextEditor00001UI.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,18 @@ namespace MVVMWPFSimpleTextEditor00001UI.ViewModels
             }
         }
 
+        public VoidCommand ExitCommand { get; set; }
+
         public TextFileViewModel()
         {
             this.TextFile = new TextFile();
+
+            this.ExitCommand = new VoidCommand(Exit);
+        }
+
+        private void Exit()
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

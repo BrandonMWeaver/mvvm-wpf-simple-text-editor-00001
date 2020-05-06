@@ -26,7 +26,8 @@
                     <MenuItem Header="_New" />
                     <MenuItem Header="_Open" />
                     <MenuItem Header="_Save" />
-                    <MenuItem Header="_Exit" />
+                    <MenuItem Header="_Exit"
+                              Command="{Binding ExitCommand}" />
                 </MenuItem>
             </Menu>
         </DockPanel>
