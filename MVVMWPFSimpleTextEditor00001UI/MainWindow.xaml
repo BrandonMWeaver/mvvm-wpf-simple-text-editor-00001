@@ -4,10 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMWPFSimpleTextEditor00001UI"
+        xmlns:vm="clr-namespace:MVVMWPFSimpleTextEditor00001UI.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#CDCDCD">
     
-    <Grid>
+    <Window.Resources>
+        <vm:TextFileViewModel x:Key="TextFileViewModel" />
+    </Window.Resources>
+    
+    <Grid DataContext="{StaticResource TextFileViewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
@@ -30,7 +35,8 @@
                  Margin="1"
                  Padding="1"
                  FontFamily="Consolas"
-                 FontSize="15" />
+                 FontSize="15"
+                 Text="{Binding TextFile.Text, Mode=TwoWay}" />
     </Grid>
     
 </Window>
